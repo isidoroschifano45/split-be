@@ -1,5 +1,7 @@
 package com.split.backend_spring.security.config;
 
+import com.split.backend_spring.exception.CustomAccessDeniedHandler;
+import com.split.backend_spring.exception.CustomAuthenticationEntryPoint;
 import com.split.backend_spring.security.filter.MyAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

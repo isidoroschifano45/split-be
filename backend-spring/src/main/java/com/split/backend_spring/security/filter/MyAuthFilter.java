@@ -1,10 +1,10 @@
 package com.split.backend_spring.security.filter;
 
+import com.split.backend_spring.security.config.JwtUtilities;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.elis.socialnetwork.security.config.JwtUtilities;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

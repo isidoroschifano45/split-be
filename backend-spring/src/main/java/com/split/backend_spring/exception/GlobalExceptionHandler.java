@@ -1,5 +1,6 @@
 package com.split.backend_spring.exception;
 
+import com.split.backend_spring.exception.user.UserAlreadySignIn;
 import com.split.backend_spring.exception.user.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +37,17 @@ public class GlobalExceptionHandler {
         body.put("message", ex.getMessage());
         body.put("descrizione", "L'utente che stai cercando non esiste nel DB");
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(UserAlreadySignIn.class)
+    public ResponseEntity<?> handleUserAlreadySignIn(UserAlreadySignIn ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("status", HttpStatus.CONFLICT.value());
+        body.put("error", "Conflict");
+        body.put("message", ex.getMessage());
+        body.put("descrizione", "Un utente con questa email è già registrato nel sistema");
+        return new ResponseEntity<>(body, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

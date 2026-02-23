@@ -9,12 +9,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserRegisterRequest {
-    public String firstName;
-    public String lastName;
-    public String username;
-    public String email;
+    private String firstName;
+    private String lastName;
+    private String username;
+    private String email;
     @Size(min= 5)
-    public String password;
+    private String password;
 
 
 }
