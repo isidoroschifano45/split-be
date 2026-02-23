@@ -27,7 +27,7 @@ public class UserMapper {
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
         user.setAvatar(""); // Avatar vuoto di default
-        user.setDataCreazione(LocalDateTime.now());
+        user.setCreatedAt(LocalDateTime.now());
 
         return user;
     }
@@ -48,6 +48,7 @@ public class UserMapper {
         response.setLastName(user.getLastname());
         response.setUsername(user.getUsername());
         response.setEmail(user.getEmail());
+        response.setCreatedAt(user.getCreatedAt());
 
         return response;
     }

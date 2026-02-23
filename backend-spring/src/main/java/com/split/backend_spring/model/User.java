@@ -44,7 +44,7 @@ public class User implements UserDetails {
     private String avatar;
 
     @Column(nullable = false)
-    private LocalDateTime dataCreazione;
+    private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL, orphanRemoval = true)
     private List<GroupMember> memberships;

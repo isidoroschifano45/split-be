@@ -42,15 +42,6 @@ public class Swagger {
                                                         "name", "Isidoro Schifano",
                                                         "email", "isidoroschifano98@gmail.com",
                                                         "url", "github.com/isidoroschifano45"
-                                                ),
-                                                Map.of(
-                                                        "name", "Andrea Passabi",
-                                                        "email", "andrepassa@gmail.com",
-                                                        "url", "github.com/passa"
-                                                ),
-                                                Map.of(
-                                                        "name", "Luigi Massa",
-                                                        "email", "luigi.massa@edu.elis.org"
                                                 )
                                         )
                                 ))
