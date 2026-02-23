@@ -1,9 +1,7 @@
 package com.split.backend_spring.security.config;
 
+import com.split.backend_spring.security.filter.MyAuthFilter;
 import lombok.RequiredArgsConstructor;
-import org.elis.socialnetwork.exception.CustomAccessDeniedHandler;
-import org.elis.socialnetwork.exception.CustomAuthenticationEntryPoint;
-import org.elis.socialnetwork.security.filter.MyAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

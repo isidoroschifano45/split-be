@@ -1,8 +1,8 @@
 package com.split.backend_spring.security.config;
 
+import com.split.backend_spring.model.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import org.elis.socialnetwork.model.Utente;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
@@ -16,7 +16,7 @@ public class JwtUtilities {
         return Keys.hmacShaKeyFor(KEY.getBytes());
     }
 
-    public String generaToken(Utente utente)
+    public String generaToken(User utente)
     {
         long dataOggi = System.currentTimeMillis();
         long dataScadenza = dataOggi + 1000L *60*60*24*30;
@@ -25,7 +25,6 @@ public class JwtUtilities {
                 .issuedAt(new Date(dataOggi))
                 .expiration(new Date(dataScadenza))
                 .claims()
-                .add("ruolo",utente.getRuolo().toString())
                 .add("id", utente.getId())
                 .and()
                 .signWith(secretKey())
