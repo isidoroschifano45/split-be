@@ -27,8 +27,8 @@ public class Swagger {
                 )
                 .info(
                         new Info()
-                                .title("SocialNetwork API")
-                                .description("API per la gestione del SocialNetwork")
+                                .title("Split API")
+                                .description("API per la gestione dell'app Split")
                                 .version("1.0")
                                 .contact(
                                         new Contact()

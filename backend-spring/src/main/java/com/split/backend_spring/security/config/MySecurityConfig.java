@@ -38,8 +38,8 @@ public class MySecurityConfig {
                     "/webjars/**"
             ).permitAll();
             t.requestMatchers("/api/auth/**").permitAll();
-            t.requestMatchers(HttpMethod.DELETE,"/utenti/**").hasAnyRole("ADMIN");
-            t.anyRequest().authenticated();
+            t.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll() // Swagger libero
+            .anyRequest().authenticated(); // Tutto il resto (incluso /api/group) richiede il token
         });
         httpConfigurer
                     .exceptionHandling(t -> t
